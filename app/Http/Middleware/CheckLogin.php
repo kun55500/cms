@@ -15,7 +15,14 @@ class CheckLogin
      */
     public function handle($request, Closure $next)
     {
+<<<<<<< HEAD
         
+=======
+        $res=session('admin');
+        if (!$res){
+            echo "<script>alert('请登录');location.href='/login';</script>";
+        }
+>>>>>>> kun
         return $next($request);
     }
 }

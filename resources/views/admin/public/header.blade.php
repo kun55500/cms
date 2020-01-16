@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -132,19 +133,35 @@
     <div id="page-wrapper" class="gray-bg dashbard-1">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-info " href="#"><i class="fa fa-bars"></i> </a>
-                    <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
+                <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-info " href="javascript:;"><i class="fa fa-bars"></i> </a>
+                    <form role="search" class="navbar-form-custom" method="post" action="javascript:;">
                         <div class="form-group">
                             <button  class="form-control" name="top-search" id="top-search">
                         </div>
+
                     </form>
                 </div>
 
+
+@if(!session('admin'))
         </div>
         <div class="row J_mainContent" id="content-main">
-            <iframe id="J_iframe" width="100%" height="100%" src="{{url('/admin')}}" frameborder="0" data-id="index_v1.html" seamless></iframe>
-        </div>9.
+            <iframe id="J_iframe" width="100%" height="100%" src="{{url('/login')}}" frameborder="0" data-id="index_v1.html" seamless></iframe>
+        </div>
     </div>
+@else
+        </div>
+        <div class="row J_mainContent" id="content-main">
+            欢迎 <b style="color: red">{{session('admin.uname')}}</b>  登录
+            <a href="{{url('login/doLogin')}}"  class="btn btn-success">退出</a>
+            <iframe id="J_iframe" width="100%" height="100%" src="{{url('/admin')}}" frameborder="0" data-id="index_v1.html" seamless></iframe>
+        </div>
+</div>
+            @endif
+
+
+
+
     <!--右侧部分结束-->
 </div>
 
