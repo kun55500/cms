@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title', '管理员添加')
+@section('title', '新闻添加')
 @section('content')
     <br>
     <br>
@@ -14,12 +14,8 @@
     <link rel="stylesheet" href="/static/admin/css/bootstrap.min.css">
 </head>
 <body>
-    <center>
-        <h1>新闻添加</h1>
-        <a href="{{url('new')}}"></a>
-    </center>
 
-    <form class="form-horizontal" role="form" action="{{url('new/store')}}" method="post" enctype="multipart/form-data">
+    <form class="form-horizontal" role="form" action="{{url('news/store')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="firstname" class="col-sm-2 control-label">新闻名称</label>
@@ -39,7 +35,7 @@
             <label for="firstname" class="col-sm-2 control-label">新闻添加人</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control"  name="n_man"
-                       placeholder="请输入名称">
+                       placeholder="请输入添加人">
             </div>
         </div>
         <div class="form-group">

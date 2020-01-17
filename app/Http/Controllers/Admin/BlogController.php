@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\Category;
-use App\Model\News;
-class CategoryController extends Controller
+use App\Model\Blog;
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-$data=Category::paginate(3);
-        return view('admin.category.index',['data'=>$data]);
+        $data=Blog::paginate(3);
+        return view('admin.blog.index',['data'=>$data]);
     }
 
     /**
@@ -27,8 +26,7 @@ $data=Category::paginate(3);
     public function create()
     {
 
-//        dd($res);
-        return view('admin.category.create');
+        return view('admin.blog.create');
     }
 
     /**
@@ -39,11 +37,10 @@ $data=Category::paginate(3);
      */
     public function store(Request $request)
     {
-        $post=$request->except('_token');
-        $post['c_time']=time();
-        $res=Category::insert($post);
+       $post=$request->except('_token');
+        $res=Blog::insert($post);
         if ($res){
-            echo "<script>alert('添加成功');location.href='/category';</script>";
+            echo "<script>alert('添加成功');location.href='/blog';</script>";
         }
     }
 
@@ -66,8 +63,8 @@ $data=Category::paginate(3);
      */
     public function edit($id)
     {
-        $data=Category::where('c_id',$id)->first();
-        return view('admin.category.edit',['data'=>$data]);
+        $data=Blog::where('b_id',$id)->first();
+        return view('admin.blog.edit',['data'=>$data]);
     }
 
     /**
@@ -80,13 +77,13 @@ $data=Category::paginate(3);
     public function update(Request $request, $id)
     {
         $post=$request->except('_token');
-        $res=Category::where('c_id',$id)->update($post);
+        $res=Blog::where('b_id',$id)->update($post);
         if ($res>=0){
-            echo "<script>alert('修改成功');location.href='/category';</script>";
+            echo "<script>alert('修改成功');location.href='/blog';</script>";
         }else if($res=0){
-            echo "<script>alert('修改无变化');location.href='/category';</script>";
+            echo "<script>alert('修改无变化');location.href='/blog';</script>";
         }else{
-            echo "<script>alert('修改失败');location.href='category/edit';</script>";
+            echo "<script>alert('修改失败');location.href='blog/edit';</script>";
         }
     }
 
@@ -98,9 +95,9 @@ $data=Category::paginate(3);
      */
     public function destroy($id)
     {
-        $data=Category::destroy($id);
+        $data=Blog::destroy($id);
         if ($data){
-            echo "<script>alert('删除成功');location.href='/category';</script>";
+            echo "<script>alert('删除成功');location.href='/blog';</script>";
         }
     }
 }

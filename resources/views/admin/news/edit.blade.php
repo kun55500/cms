@@ -49,7 +49,7 @@
         <div class="form-group">
             <label for="lastname" class="col-sm-2 control-label">新闻图片</label>
             <div class="col-sm-10">
-                <img src="{{env('QWE')}}{{$res->n_img}}" while="50px" height="50 px">
+                <img src="{{env('UPLOAD_URL')}}{{$res->n_img}}" while="50px" height="50 px">
                 <input type="file" name="n_img">
             </div>
         </div>

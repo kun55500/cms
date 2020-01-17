@@ -117,10 +117,10 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="J_menuItem" href="{{url('news/create')}}">添加友链</a>
+                            <a class="J_menuItem" href="{{url('blog/create')}}">添加友链</a>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="{{url('/news')}}">管理友链</a>
+                            <a class="J_menuItem" href="{{url('/blog')}}">管理友链</a>
                         </li>
 
                     </ul>

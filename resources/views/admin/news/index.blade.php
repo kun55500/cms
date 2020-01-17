@@ -30,7 +30,7 @@
             <td>{{$v->n_man}}</td>
             <td>{{$v->n_time=date('Y-m-d H:i:s',time())}}</td>
             <td>{{$v->c_name}}</td>
-            <td><img src="{{env('QWE')}}{{$v->n_img}}" while="50px" height="50 px"></td>>
+            <td><img src="{{env('UPLOAD_URL')}}{{$v->n_img}}" while="50px" height="50 px"></td>>
             <td>
                 <a href="{{url('news/destroy')}}/{{$v->n_id}}" class="btn btn-danger">删除</a>|
                 <a href="{{url('news/edit')}}/{{$v->n_id}}" class="btn btn-info">修改</a>

@@ -38,20 +38,22 @@ Route::prefix('category')->middleware('checklogin')->group(function () {
 
 //cms的新闻增删该查
 Route::prefix('news')->middleware('checklogin')->group(function () {
-    Route::get('/','Admin\NewsController@index');  //列表展示
-    Route::get('create','Admin\NewsController@create'); //添加视图
-    Route::post('store','Admin\NewsController@store');  //执行添加
-    Route::get('edit/{id}','Admin\NewsController@edit');   //编辑视图
-    Route::post('update/{id}','Admin\NewsController@update');   //编辑方法
-    Route::get('destroy/{id}','Admin\NewsController@destroy');  //删除方法
+    Route::get('/','Admin\NewController@index');  //列表展示
+    Route::get('create','Admin\NewController@create'); //添加视图
+    Route::post('store','Admin\NewController@store');  //执行添加
+    Route::get('edit/{id}','Admin\NewController@edit');   //编辑视图
+    Route::post('update/{id}','Admin\NewController@update');   //编辑方法
+    Route::get('destroy/{id}','Admin\NewController@destroy');  //删除方法
 });
-//友情链接增删改查
-Route::prefix('news')->middleware('checklogin')->group(function () {
-    Route::get('/','Admin\NewsController@index');  //列表展示
-    Route::get('create','Admin\NewsController@create'); //添加视图
-    Route::post('store','Admin\NewsController@store');  //执行添加
-    Route::get('edit/{id}','Admin\NewsController@edit');   //编辑视图
-    Route::post('update/{id}','Admin\NewsController@update');   //编辑方法
-    Route::get('destroy/{id}','Admin\NewsController@destroy');  //删除方法
+
+Route::prefix('blog')->middleware('checklogin')->group(function () {
+    Route::get('/','Admin\BlogController@index');  //列表展示
+    Route::get('create','Admin\BlogController@create'); //添加视图
+    Route::post('store','Admin\BlogController@store');  //执行添加
+    Route::get('edit/{id}','Admin\BlogController@edit');   //编辑视图
+    Route::post('update/{id}','Admin\BlogController@update');   //编辑方法
+    Route::get('destroy/{id}','Admin\BlogController@destroy');  //删除方法
 });
+
+
 Route::get('/','Admin\IndexController@index');
