@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+@extends('admin.layout')
+@section('title', '登录')
+@section('content')
+    <br>
+    <br>
+
+    <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -57,6 +63,8 @@
         </div>
     </div>
 
+
+    @endsection
 
 </div>
 
